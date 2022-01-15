@@ -7,8 +7,28 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 function App() {
   const [marsImages, setMarsImages] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [like, setLike] = useState(false)
+  const [disLike, setDislike] = useState(false)
 
   useEffect(() => {
+    const setLike = () => {
+    if(!like) {
+      setLike(true)
+      console.log(like)
+    } else {
+    setLike(false) 
+      console.log(like)
+    }
+      
+    const setDisLike = () => {
+    if(!dislike) {
+      setDislike(true)
+      console.log(dislike)
+    } else {
+    setDislike(false) 
+      console.log(dislike)
+    }
+      
     const getMarsImages = async () => {
       await axios
         .get(
@@ -34,10 +54,10 @@ function App() {
               <h5>{image.camera.full_name}</h5>
               <h5>{image.earth_date}</h5>
               <h4>
-                <Button type='submit' color='primary'>
+                <Button type='submit' color='primary' onClick={getLike}>
                   Like
                 </Button>
-                <Button type='submit' color='error'>
+                <Button type='submit' color='error' onClick={getDislike}>
                   Dislike
                 </Button>
                 <br />
