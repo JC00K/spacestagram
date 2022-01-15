@@ -1,0 +1,76 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.outer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.child-container {
+  background-color: grey;
+  border-style: solid;
+  margin: 0.1%;
+  border-width: medium;
+  width: 100%;
+  height: 650px;
+  flex: 1 300px;
+  border: 2px solid black;
+}
+
+img {
+  height: 300px;
+  width: 300px;
+}
+
+.loading-screen {
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5532e207-4ae8-4977-880e-52d0fdccb557/daoftpf-21e965ce-2de7-4faf-954b-f33beb93efad.jpg/v1/fill/w_1192,h_670,q_70,strp/hermes_from_the_martian_by_cannikin1701_daoftpf-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiJcL2ZcLzU1MzJlMjA3LTRhZTgtNDk3Ny04ODBlLTUyZDBmZGNjYjU1N1wvZGFvZnRwZi0yMWU5NjVjZS0yZGU3LTRmYWYtOTU0Yi1mMzNiZWI5M2VmYWQuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.6nf-6Gw1MDmqeRJyOj6AHrheamgm1Yi7P_evD_UWkK0');
+  background-size: cover;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.loading-message {
+  color: white;
+  text-align: center;
+  font-size: 40px;
+}
