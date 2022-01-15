@@ -42,6 +42,14 @@
   flex-wrap: wrap;
 }
 
+.like-button:active {
+  background-color: blue;
+}
+
+.dislike-button:active {
+  background-color: green;
+}
+
 .child-container {
   background-color: grey;
   border-style: solid;
