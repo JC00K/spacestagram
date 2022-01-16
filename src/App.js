@@ -8,9 +8,11 @@ import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import IconButton from '@mui/material/IconButton';
+import LoadingSpin from 'react-loading-spin';
 
 function App() {
   const [marsImages, setMarsImages] = useState([]);
+  const [id, setId] = useState('');
   const [loading, setLoading] = useState(false);
   const [like, setLike] = useState(false);
   const [dislike, setDislike] = useState(false);
@@ -25,9 +27,8 @@ function App() {
     }
   }
 
-  function dislikeHandler(event, data) {
+  function dislikeHandler(event) {
     // To Dislike
-    console.log(event.target, data);
     if (dislike === true) {
       setDislike(false);
     } else {
@@ -40,24 +41,30 @@ function App() {
     const getMarsImages = async () => {
       await axios
         .get(
-          'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key=otFLnuDeQ2WuP5jw2w0PMoNVgVU2sxn6VhKqbtUe'
+          'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=otFLnuDeQ2WuP5jw2w0PMoNVgVU2sxn6VhKqbtUe'
         )
         .then((res) => {
           setMarsImages(res.data.photos);
+          setId(res.data.photos.map((elem) => elem.id));
           setLoading(true);
         });
     };
     getMarsImages();
   }, []);
 
-  return loading ? (
+  return loading && <LoadingSpin /> ? (
     <div className='App'>
       <header className='App-header'>
-        <div className='outer-container'>
+        <InfiniteScroll
+          className='outer-container'
+          dataLength={marsImages.length}
+          hasMore={true}
+          loader={<h4>Loading...</h4>}
+        >
           {marsImages.map((image) => (
             <Card
               className='child-container'
-              key={image.id}
+              key={id}
               style={{ backgroundColor: 'lightblue' }}
             >
               <h5>{image.camera.full_name}</h5>
@@ -81,11 +88,13 @@ function App() {
                 </IconButton>
               )}
               <br />
-              <Button type='link'>Get Shareable Link</Button>
+              <Button type='link' variant='contained' color='inherit'>
+                Get Shareable Link
+              </Button>
               <img src={image.img_src} alt='' />
             </Card>
           ))}
-        </div>
+        </InfiniteScroll>
       </header>
     </div>
   ) : (
