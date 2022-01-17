@@ -2,7 +2,6 @@
   "name": "spacetagram",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://JC00K.github.io/spacetagram",
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
@@ -16,7 +15,6 @@
     "axios": "^0.24.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-infinite-scroll-component": "^6.1.0",
     "react-loading-spin": "^2.1.9",
     "react-scripts": "5.0.0",
     "styled-components": "^5.3.3",
@@ -26,9 +24,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
