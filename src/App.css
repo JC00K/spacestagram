@@ -46,17 +46,12 @@
   justify-content: center;
   background-color: grey;
   border-style: solid;
-  margin: 0.5%;
+  margin: 0.1%;
   border-width: large;
   width: 700px;
   height: 700px;
   border: 2px solid black;
 }
-
-/* img {
-  height: 300px;
-  width: 300px;
-} */
 
 .button-styling {
   display: flex;
