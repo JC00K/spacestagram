@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card } from '@mui/material';
 import './App.css';
-// import InfiniteScroll from 'react-infinite-scroll-component';
 import LoadingSpin from 'react-loading-spin';
 import Buttons from './Buttons';
 
