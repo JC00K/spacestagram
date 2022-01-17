@@ -42,28 +42,26 @@
   flex-wrap: wrap;
 }
 
-.like-button:active {
-  background-color: blue;
-}
-
-.dislike-button:active {
-  background-color: green;
-}
-
 .child-container {
+  justify-content: center;
   background-color: grey;
   border-style: solid;
-  margin: 0.1%;
-  border-width: medium;
-  width: 100%;
-  height: 650px;
-  flex: 1 300px;
+  margin: 0.5%;
+  border-width: large;
+  width: 700px;
+  height: 700px;
   border: 2px solid black;
 }
 
-img {
+/* img {
   height: 300px;
   width: 300px;
+} */
+
+.button-styling {
+  display: flex;
+  margin-left: 38%;
+  list-style-type: none;
 }
 
 .loading-screen {
