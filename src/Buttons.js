@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
@@ -27,33 +27,25 @@ export default function Buttons() {
   };
 
   return (
-    <ul className='button-styling'>
+    <React.Fragment>
       {like === true ? (
-        <li>
-          <IconButton onClick={(event) => likeHandler(event)}>
-            <ThumbUpAltIcon />
-          </IconButton>
-        </li>
+        <IconButton onClick={(event) => likeHandler(event)}>
+          <ThumbUpAltIcon style={{ fontSize: 60 }} />
+        </IconButton>
       ) : (
-        <li>
-          <IconButton onClick={(event) => likeHandler(event)}>
-            <ThumbUpOffAltIcon />
-          </IconButton>
-        </li>
+        <IconButton onClick={(event) => likeHandler(event)}>
+          <ThumbUpOffAltIcon style={{ fontSize: 60 }} />
+        </IconButton>
       )}
       {dislike === true ? (
-        <li>
-          <IconButton onClick={(event) => dislikeHandler(event)}>
-            <ThumbDownAltIcon />
-          </IconButton>
-        </li>
+        <IconButton onClick={(event) => dislikeHandler(event)}>
+          <ThumbDownAltIcon style={{ fontSize: 60 }} />
+        </IconButton>
       ) : (
-        <li>
-          <IconButton onClick={(event) => dislikeHandler(event)}>
-            <ThumbDownOffAltIcon />
-          </IconButton>
-        </li>
+        <IconButton onClick={(event) => dislikeHandler(event)}>
+          <ThumbDownOffAltIcon style={{ fontSize: 60 }} />
+        </IconButton>
       )}
-    </ul>
+    </React.Fragment>
   );
 }

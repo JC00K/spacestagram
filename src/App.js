@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Card } from '@mui/material';
+import {
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  Container,
+  Typography,
+} from '@mui/material';
 import './App.css';
 import LoadingSpin from 'react-loading-spin';
 import Buttons from './Buttons';
@@ -25,26 +32,26 @@ export default function App() {
 
   const renderImages = () => {
     return marsImages.map((image) => (
-      <Card
-        className='child-container'
-        style={{ backgroundColor: 'lightblue' }}
-      >
-        <h5>{image.camera.full_name}</h5>
-        <h5>{image.earth_date}</h5>
-        <Buttons />
-        <img src={image.img_src} alt='' />
-      </Card>
+      <Box>
+        <Card
+          className='child-container'
+          style={{ backgroundColor: 'lightblue' }}
+        >
+          <CardContent>
+            <Typography fontSize={40}>{image.camera.full_name}</Typography>
+            <Typography fontSize={35}>{image.earth_date}</Typography>
+            <Box>
+              <Buttons />
+            </Box>
+          </CardContent>
+          <CardMedia component='img' image={image.img_src} alt='' />
+        </Card>
+      </Box>
     ));
   };
 
   return loading ? (
-    <div className='App'>
-      <header className='App-header'>
-        <div className='outer-container'>
-          <div>{renderImages()}</div>
-        </div>
-      </header>
-    </div>
+    <Container className='outer-container'>{renderImages()}</Container>
   ) : (
     <div className='loading-screen'>
       <h1 className='loading-message'>
